@@ -38,7 +38,7 @@ namespace ASPP.DL
 
         public static bool updateItem(Product product, int stock, int threshold)
         {
-            return SQLHelper.runStatement("UPDATE INTO Inventory SET Stock = @Stock, RestockThresold = @Thresold WHERE ProductID = @Product", new Dictionary<string, object>()
+            return SQLHelper.runStatement("UPDATE INTO Inventory SET Stock = @Stock, RestockThreshold = @Threshold WHERE ProductID = @Product", new Dictionary<string, object>()
             {
                 { "@Product", product?.ID },
                 { "@Stock", stock },

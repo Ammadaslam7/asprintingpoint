@@ -18,7 +18,7 @@ namespace ASPP.DL
                 { "@Name", name },
                 { "@Desc", description },
                 { "@Price", price },
-                { "@Stock", stock },
+                { "@Stock", Convert.ToInt32(stock) },
                 { "@Purchase", isPurchaseable },
                 { "@Cate", category?.ID },
             });
@@ -31,7 +31,7 @@ namespace ASPP.DL
 
             foreach (DataRow row in productTbl.Rows)
             {
-                products.Add(new Product(Convert.ToInt32(row[0]), Convert.ToString(row[1]), Convert.ToString(row[2]), (float)Convert.ToDouble(row[3]), Convert.ToUInt32(row[4]), Convert.ToBoolean(row[5]), (Category)row[6]));
+                products.Add(new Product(Convert.ToInt32(row[0]), Convert.ToString(row[1]), Convert.ToString(row[2]), (float)Convert.ToDouble(row[3]), Convert.ToUInt32(row[4]), Convert.ToBoolean(row[5]), CategoryDL.getCategory((int)row[6])));
             }
 
             return products;

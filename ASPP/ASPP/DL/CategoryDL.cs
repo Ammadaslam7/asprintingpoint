@@ -20,7 +20,7 @@ namespace ASPP.DL
 
         public static List<Category> getCategories()
         {
-            DataTable categoryTbl = SQLHelper.runQuery("SELECT CategoryID, Name, Description, Price, Stock, PurchaseAble, CategoryID FROM Category");
+            DataTable categoryTbl = SQLHelper.runQuery("SELECT CategoryID, Name FROM Category");
             List<Category> categories = new List<Category>(categoryTbl.Rows.Count);
 
             foreach (DataRow row in categoryTbl.Rows)
@@ -33,7 +33,7 @@ namespace ASPP.DL
 
         public static Category getCategory(int ID)
         {
-            DataTable categoryTbl = SQLHelper.runQuery("SELECT CategoryID, Name, Description, Price, Stock, PurchaseAble, CategoryID FROM Category WHERE CategoryID = @ID",
+            DataTable categoryTbl = SQLHelper.runQuery("SELECT CategoryID, Name FROM Category WHERE CategoryID = @ID",
                 new Dictionary<string, object>()
                 {
                     { "@ID", ID },
