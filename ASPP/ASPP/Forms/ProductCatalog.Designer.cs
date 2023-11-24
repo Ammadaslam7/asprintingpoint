@@ -1,4 +1,4 @@
-﻿namespace ASPP
+﻿namespace ASPP.Forms
 {
     partial class ProductCatalog
     {
@@ -33,6 +33,7 @@
             // 
             // flp_items
             // 
+            this.flp_items.AutoScroll = true;
             this.flp_items.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flp_items.Location = new System.Drawing.Point(0, 0);
             this.flp_items.Name = "flp_items";

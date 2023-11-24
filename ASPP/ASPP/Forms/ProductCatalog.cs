@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using ASPP.Core;
 using ASPP.DL;
 
-namespace ASPP
+namespace ASPP.Forms
 {
     public partial class ProductCatalog : Form
     {
@@ -39,6 +39,7 @@ namespace ASPP
             dp.Image = ImageAssets.placeholder;
             dp.Dock = DockStyle.Fill;
             dp.SizeMode = PictureBoxSizeMode.Zoom;
+            dp.MouseClick += (sender, e) => ProductClick(sender, e, product);
 
             Font font = new Font("Times New Roman", 12F);
 
@@ -47,15 +48,19 @@ namespace ASPP
             description.Anchor = AnchorStyles.None;
             description.Dock = DockStyle.None;
             description.Font = font;
+            description.MouseClick += (sender, e) => ProductClick(sender, e, product);
 
             Label price = new Label();
-            price.Text = "Rs. " + product.Price.ToString() + "/-";
+            price.Text = Utils.convertToPriceString(product.Price);
             price.Anchor = AnchorStyles.None;
             price.Dock = DockStyle.None;
+            price.MouseClick += (sender, e) => ProductClick(sender, e, product);
 
             tlp.Controls.Add(dp, 1, 0);
             tlp.Controls.Add(description, 1, 1);
             tlp.Controls.Add(price, 1, 2);
+
+            tlp.MouseClick += (sender, e) => ProductClick(sender, e, product);
 
             return tlp;
         }
@@ -76,6 +81,14 @@ namespace ASPP
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void ProductClick(object sender, MouseEventArgs e, Product product)
+        {
+            Form frm = new ProductView(product);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
         }
     }
 }
