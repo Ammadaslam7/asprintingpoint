@@ -33,6 +33,7 @@
             this.btn_right = new System.Windows.Forms.Button();
             this.btn_left = new System.Windows.Forms.Button();
             this.pbx_product = new System.Windows.Forms.PictureBox();
+            this.lbl_picCount = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_name_val = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
-            this.lbl_picCount = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_product)).BeginInit();
@@ -125,6 +125,17 @@
             this.pbx_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbx_product.TabIndex = 2;
             this.pbx_product.TabStop = false;
+            // 
+            // lbl_picCount
+            // 
+            this.lbl_picCount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_picCount.AutoSize = true;
+            this.lbl_picCount.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lbl_picCount.Location = new System.Drawing.Point(184, 201);
+            this.lbl_picCount.Name = "lbl_picCount";
+            this.lbl_picCount.Size = new System.Drawing.Size(24, 13);
+            this.lbl_picCount.TabIndex = 3;
+            this.lbl_picCount.Text = "1/1";
             // 
             // tableLayoutPanel3
             // 
@@ -284,6 +295,7 @@
             this.btn_add.TabIndex = 0;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_cancel
             // 
@@ -296,17 +308,6 @@
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
-            // 
-            // lbl_picCount
-            // 
-            this.lbl_picCount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_picCount.AutoSize = true;
-            this.lbl_picCount.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lbl_picCount.Location = new System.Drawing.Point(184, 201);
-            this.lbl_picCount.Name = "lbl_picCount";
-            this.lbl_picCount.Size = new System.Drawing.Size(24, 13);
-            this.lbl_picCount.TabIndex = 3;
-            this.lbl_picCount.Text = "1/1";
             // 
             // ProductView
             // 

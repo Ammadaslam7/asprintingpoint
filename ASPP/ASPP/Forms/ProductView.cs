@@ -35,5 +35,13 @@ namespace ASPP.Forms
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            Cart.addItem(product, (int)num_stock.Value);
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }

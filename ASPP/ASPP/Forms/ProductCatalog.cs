@@ -69,23 +69,26 @@ namespace ASPP.Forms
         {
             List<Product> products = ProductDL.getProducts();
 
-            //foreach(Product product in products)
-            //{
-            //    flp_items.Controls.Add(createCard(product));
-            //}
+            foreach (Product product in products)
+            {
+                flp_items.Controls.Add(createCard(product));
+            }
 
-            for (int i = 0; i < 10; i++)
-                flp_items.Controls.Add(createCard(products[0]));
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            //for (int i = 0; i < 10; i++)
+            //    flp_items.Controls.Add(createCard(products[0]));
         }
 
         private void ProductClick(object sender, MouseEventArgs e, Product product)
         {
             Form frm = new ProductView(product);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void pbx_cart_Click(object sender, EventArgs e)
+        {
+            Form frm = new CartView();
             this.Hide();
             frm.ShowDialog();
             this.Show();

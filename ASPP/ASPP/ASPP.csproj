@@ -49,12 +49,22 @@
     <Compile Include="Core\Category.cs" />
     <Compile Include="Core\DBHandler.cs" />
     <Compile Include="Core\InventoryItem.cs" />
+    <Compile Include="Core\Order.cs" />
+    <Compile Include="Core\OrderItem.cs" />
     <Compile Include="Core\Product.cs" />
+    <Compile Include="DL\Cart.cs" />
     <Compile Include="DL\CategoryDL.cs" />
     <Compile Include="DL\Inventory.cs" />
+    <Compile Include="DL\OrderDL.cs" />
     <Compile Include="DL\ProductDL.cs" />
     <Compile Include="DL\SQLHelper.cs" />
     <Compile Include="DL\Utils.cs" />
+    <Compile Include="Forms\CartView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CartView.Designer.cs">
+      <DependentUpon>CartView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProductCatalog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +84,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ImageAssets.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\CartView.resx">
+      <DependentUpon>CartView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductCatalog.resx">
       <DependentUpon>ProductCatalog.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +127,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cs-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_zoomed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
